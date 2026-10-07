@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cryptova | Cryptography Workbench</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-bg"></div>
+    </div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                🔐
+            </div>
+
+            <div class="brand-text">
+                <h2>CRYPTOVA</h2>
+                <span>Cryptography Workbench</span>
+            </div>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#" class="active">
+                Home
+            </a>
+
+            <a href="#algorithms">
+                Algorithms
+            </a>
+
+            <a href="#">
+                Documentation
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
+        </div>
+
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            System Ready
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-container">
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-title">
+
+                <span class="sidebar-icon">
+                    ◈
+                </span>
+
+                <span>
+                    Algorithms
+                </span>
+
+            </div>
+
+
+            <div class="algorithm-menu">
+
+                <button
+                    class="algorithm-item active"
+                    data-algorithm="shift">
+
+                    <span class="algo-number">
+                        01
+                    </span>
+
+                    <span class="algo-name">
+                        Shift Cipher
+                    </span>
+
+                    <span class="arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="algorithm-item"
+                    data-algorithm="substitution">
+
+                    <span class="algo-number">
+                        02
+                    </span>
+
+                    <span class="algo-name">
+                        Substitution Cipher
+                    </span>
+
+                    <span class="arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="algorithm-item"
+                    data-algorithm="affine">
+
+                    <span class="algo-number">
+                        03
+                    </span>
+
+                    <span class="algo-name">
+                        Affine Cipher
+                    </span>
+
+                    <span class="arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="algorithm-item"
+                    data-algorithm="vigenere">
+
+                    <span class="algo-number">
+                        04
+                    </span>
+
+                    <span class="algo-name">
+                        Vigenere Cipher
+                    </span>
+
+                    <span class="arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="algorithm-item"
+                    data-algorithm="hill">
+
+                    <span class="algo-number">
+                        05
+                    </span>
+
+                    <span class="algo-name">
+                        Hill Cipher
+                    </span>
+
+                    <span class="arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="algorithm-item"
+                    data-algorithm="permutation">
+
+                    <span class="algo-number">
+                        06
+                    </span>
+
+                    <span class="algo-name">
+                        Permutation Cipher
+                    </span>
+
+                    <span class="arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="algorithm-item"
+                    data-algorithm="otp">
+
+                    <span class="algo-number">
+                        07
+                    </span>
+
+                    <span class="algo-name">
+                        One-Time Pad
+                    </span>
+
+                    <span class="arrow">
+                        ›
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- Sidebar bottom -->
+
+            <div class="sidebar-info">
+
+                <div class="shield-icon">
+                    🛡
+                </div>
+
+                <h3>
+                    Better Encryption.
+                </h3>
+
+                <h3 class="gradient-text">
+                    Safer Tomorrow.
+                </h3>
+
+                <p>
+                    Cryptova membantu kamu memahami
+                    dan menggunakan berbagai algoritma
+                    kriptografi secara interaktif.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ================= WORKSPACE ================= -->
+
+        <section class="workspace">
+
+
+            <!-- Workspace header -->
+
+            <div class="workspace-top">
+
+                <div class="workspace-title">
+
+                    <div class="cipher-icon">
+                        A↔Z
+                    </div>
+
+                    <div>
+
+                        <span class="small-label">
+                            CRYPTOGRAPHY ALGORITHM
+                        </span>
+
+                        <h1 id="algorithmTitle">
+                            Shift Cipher
+                        </h1>
+
+                        <p id="algorithmDescription">
+                            Simple alphabet shifting technique.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mode-badge">
+                    CLASSIC
+                </div>
+
+            </div>
+
+
+
+            <!-- Controls -->
+
+            <div class="controls">
+
+
+                <div class="control-group">
+
+                    <label>
+                        Algorithm
+                    </label>
+
+                    <div class="select-wrapper">
+
+                        <select id="algorithm">
+
+                            <option value="shift">
+                                Shift Cipher
+                            </option>
+
+                            <option value="substitution">
+                                Substitution Cipher
+                            </option>
+
+                            <option value="affine">
+                                Affine Cipher
+                            </option>
+
+                            <option value="vigenere">
+                                Vigenere Cipher
+                            </option>
+
+                            <option value="hill">
+                                Hill Cipher
+                            </option>
+
+                            <option value="permutation">
+                                Permutation Cipher
+                            </option>
+
+                            <option value="otp">
+                                One-Time Pad
+                            </option>
+
+                        </select>
+
+                        <span>
+                           ⌄
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-group">
+
+                    <label>
+                        Mode
+                    </label>
+
+                    <div class="mode-buttons">
+
+                        <button
+                            id="encryptMode"
+                            class="mode-btn active">
+
+                            🔒 Encrypt
+
+                        </button>
+
+                        <button
+                            id="decryptMode"
+                            class="mode-btn">
+
+                            🔓 Decrypt
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-group">
+
+                    <label>
+                        Key
+                    </label>
+
+                    <div class="key-box">
+
+                        <span>
+                            🔑
+                        </span>
+
+                        <input
+                            type="text"
+                            id="key"
+                            placeholder="Enter key"
+                            value="3">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Text editors -->
+
+            <div class="editor-area">
+
+
+                <!-- Plaintext -->
+
+                <div class="editor-card plaintext-card">
+
+                    <div class="editor-header">
+
+                        <div class="editor-title">
+
+                            <span class="editor-icon">
+                                ▣
+                            </span>
+
+                            <div>
+
+                                <span class="editor-label">
+                                    INPUT
+                                </span>
+
+                                <h3>
+                                    Plaintext
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <span
+                            class="character-count"
+                            id="plainCount">
+                            0 characters
+                        </span>
+
+                    </div>
+
+
+                    <textarea
+                        id="plaintext"
+                        placeholder="Type your message here..."
+                    >HELLO WORLD</textarea>
+
+
+                    <div class="editor-footer">
+
+                        <button
+                            class="small-btn"
+                            onclick="clearPlaintext()">
+
+                            🗑 Clear
+
+                        </button>
+
+
+                        <button
+                            class="small-btn"
+                            onclick="copyPlaintext()">
+
+                            📋 Copy
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Transfer -->
+
+                <div class="transfer">
+
+                    <div class="transfer-circle">
+                        ⇄
+                    </div>
+
+                </div>
+
+
+
+                <!-- Ciphertext -->
+
+                <div class="editor-card ciphertext-card">
+
+                    <div class="editor-header">
+
+                        <div class="editor-title">
+
+                            <span class="editor-icon green">
+                                🔒
+                            </span>
+
+                            <div>
+
+                                <span class="editor-label">
+                                    OUTPUT
+                                </span>
+
+                                <h3>
+                                    Ciphertext
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <span
+                            class="character-count"
+                            id="cipherCount">
+
+                            0 characters
+
+                        </span>
+
+                    </div>
+
+
+                    <textarea
+                        id="ciphertext"
+                        placeholder="Encrypted result will appear here..."
+                    ></textarea>
+
+
+                    <div class="editor-footer">
+
+                        <button
+                            class="small-btn"
+                            onclick="clearCiphertext()">
+
+                            🗑 Clear
+
+                        </button>
+
+
+                        <button
+                            class="small-btn"
+                            onclick="copyCiphertext()">
+
+                            📋 Copy
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= FILE WORKSPACE ================= -->
+
+<div class="file-workspace">
+
+    <div class="file-header">
+
+        <div>
+            <span class="small-label">
+                FILE ENCRYPTION
+            </span>
+
+            <h2>
+                Encrypt Your File
+            </h2>
+
+            <p>
+                Upload dokumen atau file lainnya untuk
+                diproses menggunakan algoritma yang dipilih.
+            </p>
+        </div>
+
+        <div class="file-icon">
+            📁
+        </div>
+
+    </div>
+
+
+    <div class="file-upload-area">
+
+        <input
+            type="file"
+            id="fileInput"
+            hidden
+        >
+
+        <div class="upload-icon">
+            ↑
+        </div>
+
+        <h3>
+            Drop your file here
+        </h3>
+
+        <p>
+            atau pilih file dari komputer
+        </p>
+
+        <button
+            class="choose-file-btn"
+            onclick="document.getElementById('fileInput').click()">
+
+            Choose File
+
+        </button>
+
+        <div
+            class="selected-file"
+            id="selectedFile">
+
+            Belum ada file dipilih.
+
+        </div>
+
+    </div>
+
+
+    <div class="file-actions">
+
+        <button
+            class="file-action encrypt-file"
+            onclick="encryptFile()">
+
+            🔒 Encrypt File
+
+        </button>
+
+
+        <button
+            class="file-action decrypt-file"
+            onclick="decryptFile()">
+
+            🔓 Decrypt File
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="file-status"
+        id="fileStatus">
+
+        <span class="file-status-dot"></span>
+
+        <span>
+            File encryption ready.
+        </span>
+
+    </div>
+
+</div>
+
+            <!-- Action buttons -->
+
+            <div class="action-buttons">
+
+                <button
+                    class="action-btn encrypt-btn"
+                    onclick="encryptText()">
+
+                    <span>
+                        🔒
+                    </span>
+
+                    <div>
+                        <strong>Encrypt</strong>
+                        <small>Encrypt your message</small>
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="action-btn decrypt-btn"
+                    onclick="decryptText()">
+
+                    <span>
+                        🔓
+                    </span>
+
+                    <div>
+                        <strong>Decrypt</strong>
+                        <small>Decrypt your message</small>
+                    </div>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Status -->
+
+            <div
+                class="result-status"
+                id="resultStatus">
+
+                <div class="success-indicator"></div>
+
+                <div class="status-message">
+
+                    <strong id="statusTitle">
+                        System Ready
+                    </strong>
+
+                    <span id="statusDescription">
+                        Enter a message and key to begin.
+                    </span>
+
+                </div>
+
+
+                <div class="status-details">
+
+                    <div>
+                        <span>
+                            Algorithm
+                        </span>
+
+                        <strong id="statusAlgorithm">
+                            Shift Cipher
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Key
+                        </span>
+
+                        <strong id="statusKey">
+                            3
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= RIGHT INFO ================= -->
+
+        <aside class="info-panel">
+
+            <div class="info-header">
+
+                <span>
+                    ◉
+                </span>
+
+                <h2>
+                    About Shift Cipher
+                </h2>
+
+            </div>
+
+
+            <p id="infoDescription">
+
+                Shift Cipher adalah algoritma
+                kriptografi sederhana yang bekerja
+                dengan menggeser setiap huruf pada
+                alfabet sejumlah posisi tertentu.
+
+            </p>
+
+
+            <div class="example-box">
+
+                <span>
+                    EXAMPLE
+                </span>
+
+                <div>
+
+                    <p>
+                        Plaintext :
+                        <strong>HELLO</strong>
+                    </p>
+
+                    <p>
+                        Key :
+                        <strong>3</strong>
+                    </p>
+
+                    <p>
+                        Ciphertext :
+                        <strong>KHOOR</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="tips">
+
+                <h3>
+                    💡 Tips
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Key Shift Cipher harus berupa angka.
+                    </li>
+
+                    <li>
+                        Huruf A-Z akan digeser sesuai key.
+                    </li>
+
+                    <li>
+                        Spasi dan simbol tidak berubah.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+
+    <!-- ================= ALGORITHMS ================= -->
+
+    <section
+        class="available-section"
+        id="algorithms">
+
+        <div class="section-heading">
+
+            <span>
+                AVAILABLE METHODS
+            </span>
+
+            <h2>
+                Cryptography Algorithms
+            </h2>
+
+            <p>
+                Pilih algoritma yang ingin kamu gunakan.
+            </p>
+
+        </div>
+
+
+        <div class="algorithm-cards">
+
+
+            <div class="algo-card active">
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <div class="card-symbol">
+                    A↔Z
+                </div>
+
+                <h3>
+                    Shift Cipher
+                </h3>
+
+                <p>
+                    Simple alphabet shifting technique.
+                </p>
+
+            </div>
+
+
+            <div class="algo-card">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <div class="card-symbol">
+                    ◈
+                </div>
+
+                <h3>
+                    Substitution
+                </h3>
+
+                <p>
+                    Replace characters using mapping.
+                </p>
+
+            </div>
+
+
+            <div class="algo-card">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <div class="card-symbol">
+                    ƒx
+                </div>
+
+                <h3>
+                    Affine Cipher
+                </h3>
+
+                <p>
+                    Multiplication and shifting.
+                </p>
+
+            </div>
+
+
+            <div class="algo-card">
+
+                <div class="card-number">
+                    04
+                </div>
+
+                <div class="card-symbol">
+                    🔑
+                </div>
+
+                <h3>
+                    Vigenere
+                </h3>
+
+                <p>
+                    Polyalphabetic substitution.
+                </p>
+
+            </div>
+
+
+            <div class="algo-card">
+
+                <div class="card-number">
+                    05
+                </div>
+
+                <div class="card-symbol">
+                    ▦
+                </div>
+
+                <h3>
+                    Hill Cipher
+                </h3>
+
+                <p>
+                    Matrix-based cryptography.
+                </p>
+
+            </div>
+
+
+            <div class="algo-card">
+
+                <div class="card-number">
+                    06
+                </div>
+
+                <div class="card-symbol">
+                    ⇄
+                </div>
+
+                <h3>
+                    Permutation
+                </h3>
+
+                <p>
+                    Rearrange characters using a key.
+                </p>
+
+            </div>
+
+
+            <div class="algo-card">
+
+                <div class="card-number">
+                    07
+                </div>
+
+                <div class="card-symbol">
+                    ⬡
+                </div>
+
+                <h3>
+                    One-Time Pad
+                </h3>
+
+                <p>
+                    Random key sequence encryption.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-brand">
+            🔐 CRYPTOVA
+        </div>
+
+        <p>
+            Cryptography Web Application © 2026
+        </p>
+
+        <span>
+            Built for Cryptography Course
+        </span>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
